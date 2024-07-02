@@ -6,11 +6,12 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:29:39 by dansam            #+#    #+#             */
-/*   Updated: 2024/06/12 19:34:51 by dansam           ###   ########.fr       */
+/*   Updated: 2024/07/02 11:59:14 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+#include <stdio.h>
 
 void ft_bzero(void *s, size_t n)
 {
