@@ -6,11 +6,11 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:25:43 by dansam            #+#    #+#             */
-/*   Updated: 2024/07/02 17:31:16 by dansam           ###   ########.fr       */
+/*   Updated: 2024/07/10 23:35:16 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void *ft_calloc(size_t count, size_t size)
 {
