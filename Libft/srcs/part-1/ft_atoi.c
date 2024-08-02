@@ -5,40 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 15:07:39 by dansam            #+#    #+#             */
-/*   Updated: 2024/07/02 15:20:03 by dansam           ###   ########.fr       */
+/*   Created: 2024/06/14 10:34:14 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/08/02 22:57:05 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int c_index;
-    int sign;
-    int res;
+	int	c_index;
+	int	sign;
+	int	result;
 
-    c_index = 0;
-    sign = 1;
-    res = 0;
-    while (str[c_index] == ' ' || (str[c_index] >= 9 && str[c_index] <= 13))
-        c_index++;
-    if (str[c_index] == '-' || str[c_index] == '+')
-    {
-        if (str[c_index] == '-')
-            sign = -1;
-        c_index++;
-    }
-    while (str[c_index] >= '0' && str[c_index] <= '9')
-    {
-        res = res * 10 + str[c_index] - '0';
-        c_index++;
-    }
-    return (res * sign);
+	c_index = 0;
+	sign = 1;
+	result = 0;
+	while (str[c_index] == ' ' || str[c_index] == '\n' || str[c_index] == '\t'
+		|| str[c_index] == '\v' || str[c_index] == '\f' || str[c_index] == '\r')
+		c_index++;
+	if (str[c_index] == '-' || str[c_index] == '+')
+	{
+		if (str[c_index] == '-')
+			sign = -1;
+		c_index++;
+	}
+	while (str[c_index] >= '0' && str[c_index] <= '9')
+	{
+		result = (result * 10) + (str[c_index] - '0');
+		c_index++;
+	}
+	return (result * sign);
 }
 
-// int main(void)
+// #include <stdio.h>
+// int	main(void)
 // {
-//     char str[] = "  -42";
-//     printf("atoi: %d\n", atoi(str));
-//     printf("ft_atoi: %d\n", ft_atoi(str));
-//     return (0);
+// 	char	*str;
+
+// 	str = "  -1234";
+// 	printf("%d\n", ft_atoi(str));
+// 	return (0);
 // }
