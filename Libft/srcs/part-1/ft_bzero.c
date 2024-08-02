@@ -5,27 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 19:29:39 by dansam            #+#    #+#             */
-/*   Updated: 2024/07/02 11:59:14 by dansam           ###   ########.fr       */
+/*   Created: 2024/06/11 21:33:20 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/08/02 23:14:17 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdio.h>
+#include "../../includes/libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	while (n--)
 		*(unsigned char *)s++ = '\0';
 }
 
-// int main(void)
+// #include <stdio.h>
+// int	main(void)
 // {
-// 	char str[] = "Hello, World!";
-// 	size_t len = 6;
+// 	char	str[10] = "Hello";
+// 	int		i;
 
-// 	printf("Before bzero: \"%s\"\n", str);
-// 	ft_bzero(str, len);
-// 	printf("After bzero: \"%s\"\n", str);
+// 	i = 0;
+// 	ft_bzero(str, 5);
+// 	while (i < 5)
+// 	{
+// 		printf("%c", str[i]);
+// 		i++;
+// 	}
+// 	printf("\n");
 // 	return (0);
 // }
