@@ -3,36 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 19:44:30 by dansam            #+#    #+#             */
-/*   Updated: 2024/06/12 19:45:16 by dansam           ###   ########.fr       */
+/*   Created: 2024/06/12 19:45:42 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/06/12 20:21:53 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *d;
-	unsigned char *s;
+	unsigned char	*dest_s;
+	unsigned char	*src_s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
+	if (!dest && !src)
+		return (dest);
+	dest_s = (unsigned char *)dest;
+	src_s = (unsigned char *)src;
 	while (n--)
-		*d++ = *s++;
-	return (dst);
+		*dest_s++ = *src_s++;
+	return (dest);
 }
-
-// int main(void)
-// {
-// 	char src[] = "Hello, World!";
-// 	char dst[14];
-// 	size_t len;
-
-// 	len = 14;
-// 	printf("Before memcpy: \"%s\"\n", src);
-// 	ft_memcpy(dst, src, len);
-// 	printf("After memcpy: \"%s\"\n", dst);
-// 	return (0);
-// }
