@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 21:39:38 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/22 18:00:24 by dsamuel          ###   ########.fr       */
+/*   Created: 2024/06/14 19:34:14 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/06/21 11:51:52 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	dst_len;
-	size_t	src_index;
+	char	*new_str;
+	int		i;
+	int		j;
 
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	dst_len = ft_strlen(dst);
-	src_index = 0;
-	while (src[src_index] != '\0' && dst_len + 1 < dstsize)
+	new_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s1 || !s2 || !new_str)
+		return (0);
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		dst[dst_len] = src[src_index];
-		dst_len++;
-		src_index++;
+		new_str[i] = s1[i];
+		i++;
 	}
-	dst[dst_len] = '\0';
-	return (ft_strlen(dst) + ft_strlen(&src[src_index]));
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		new_str[i] = s2[j];
+		i++;
+		j++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

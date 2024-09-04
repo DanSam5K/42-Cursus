@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:43:51 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/17 10:44:25 by dsamuel          ###   ########.fr       */
+/*   Created: 2024/06/13 10:50:22 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/06/19 18:53:55 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static size_t	ft_str_len(char const *str)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	unsigned char	uc;
 
-	i = 0;
-	while (*(str + i))
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(const char *src)
-{
-	size_t	len;
-	char	*dst;
-	size_t	i;
-
-	len = ft_str_len(src);
-	dst = (char *)malloc((len + 1) * sizeof(char));
-	if (dst == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	uc = (unsigned char)c;
+	while (*s != '\0')
 	{
-		dst[i] = src[i];
-		i++;
+		if (*s == uc)
+			return ((char *)s);
+		s++;
 	}
-	dst[len] = '\0';
-	return (dst);
+	if (uc == '\0')
+		return ((char *)s);
+	return (0);
 }

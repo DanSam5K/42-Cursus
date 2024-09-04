@@ -5,42 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 19:32:27 by dansam            #+#    #+#             */
-/*   Updated: 2024/06/12 19:35:18 by dansam           ###   ########.fr       */
+/*   Created: 2024/06/12 20:36:16 by dsamuel           #+#    #+#             */
+/*   Updated: 2024/09/04 21:49:39 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned char *s;
+	unsigned char	*dst_s;
+	unsigned char	*src_s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (d < s)
+	dst_s = (unsigned char *)dst;
+	src_s = (unsigned char *)src;
+	if (!dst && !src)
+		return (dst);
+	if (dst_s < src_s)
 		while (len--)
-			*d++ = *s++;
+			*dst_s++ = *src_s++;
 	else
 	{
-		d += len;
-		s += len;
+		dst_s += len;
+		src_s += len;
 		while (len--)
-			*--d = *--s;
+			*--dst_s = *--src_s;
 	}
 	return (dst);
 }
 
-// int main(void)
-// {
-// 	char src[] = "Hello, World!";
-// 	char dst[14];
-// 	size_t len;
-
-// 	len = 14;
-// 	printf("Before memmove: \"%s\"\n", src);
-// 	ft_memmove(dst, src, len);
-// 	printf("After memmove: \"%s\"\n", dst);
-// 	return (0);
-// }
+int main()
+{
+	char src[] = "GeeksforGeeks";
+	char dest[100];
+	ft_memmove(dest, src, strlen(src)+1);
+	printf("Copied string is %s", dest);
+	return 0;
+}

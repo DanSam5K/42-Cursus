@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:45:42 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/12 20:21:53 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/04 22:07:12 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	while (n--)
 		*dest_s++ = *src_s++;
 	return (dest);
+}
+
+int main()
+{
+	char src[] = "GeeksforGeeks";
+	char dest[100];
+	ft_memcpy(dest, src, ft_strlen(src)+1);
+	printf("Copied string is %s", dest);
+	return 0;
 }
