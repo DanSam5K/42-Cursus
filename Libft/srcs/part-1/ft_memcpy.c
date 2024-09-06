@@ -6,11 +6,11 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:45:42 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/09/04 22:07:12 by dansam           ###   ########.fr       */
+/*   Updated: 2024/09/06 22:21:52 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -26,11 +26,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int main()
-{
-	char src[] = "GeeksforGeeks";
-	char dest[100];
-	ft_memcpy(dest, src, ft_strlen(src)+1);
-	printf("Copied string is %s", dest);
-	return 0;
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	char src[] = "GeeksforGeeks";
+// 	char dest[100];
+// 	ft_memcpy(dest, src, strlen(src)+1);
+// 	printf("Copied string is %s", dest);
+// 	return 0;
+// }
