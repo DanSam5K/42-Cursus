@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:43:51 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/17 10:44:25 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/08 15:06:56 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static size_t	ft_str_len(char const *str)
 {
@@ -41,3 +41,16 @@ char	*ft_strdup(const char *src)
 	dst[len] = '\0';
 	return (dst);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char	*src;
+// 	char	*dst;
+
+// 	src = "Hello";
+// 	dst = ft_strdup(src);
+// 	printf("%s\n", dst);
+// 	free(dst);
+// 	return (0);
+// }

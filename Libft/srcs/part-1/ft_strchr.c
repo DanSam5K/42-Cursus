@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:50:22 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/09/08 13:37:41 by dansam           ###   ########.fr       */
+/*   Updated: 2024/09/08 14:27:31 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char	str[10] = "Hello";
-	char	*ptr;
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char	str[10] = "Hello";
+// 	char	*ptr;
 
-	ptr = ft_strchr(str, 'a');
-	if (ptr)
-		printf("Character found: %c\n", *ptr);
-	else
-		printf("Character not found\n");
-	return (0);
-}
+// 	ptr = ft_strchr(str, 'a');
+// 	if (ptr)
+// 		printf("Character found: %c\n", *ptr);
+// 	else
+// 		printf("Character not found\n");
+// 	return (0);
+// }
