@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:27:03 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/19 18:28:28 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/08 14:29:29 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,13 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	c;
+
+// 	c = '5';
+// 	printf("%d\n", ft_isprint(c));
+// 	return (0);
+// }
