@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:01:32 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/09/06 22:38:27 by dansam           ###   ########.fr       */
+/*   Updated: 2024/09/11 12:21:55 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,13 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return ((char *)last_occurrence);
 }
+
+// int main(void)
+// {
+// 	char	s[50] = "Hello World";
+// 	int		c;
+
+// 	c = 'o';
+// 	printf("%s\n", ft_strrchr(s, c));
+// 	return (0);
+// }
