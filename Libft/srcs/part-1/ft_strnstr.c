@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 21:28:53 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/09/06 22:38:22 by dansam           ###   ########.fr       */
+/*   Updated: 2024/09/11 11:56:49 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t max_len)
 	}
 	return (0);
 }
+
+// int main(void)
+// {
+// 	char	haystack[50] = "Hello World";
+// 	char	needle[50] = "World";
+// 	size_t	max_len;
+
+// 	max_len = 10;
+// 	printf("%s\n", ft_strnstr(haystack, needle, max_len));
+// 	return (0);
+// }
