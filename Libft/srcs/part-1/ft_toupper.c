@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 10:37:23 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/17 11:09:20 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/12 22:01:03 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,12 @@ int	ft_toupper(int c)
 		return (c - ('a' - 'A'));
 	return (c);
 }
+
+// int main(void)
+// {
+// 	char	c;
+
+// 	c = 'a';
+// 	printf("%c\n", ft_toupper(c));
+// 	return (0);
+// }
