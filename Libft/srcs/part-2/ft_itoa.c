@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 16:23:17 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/16 16:52:13 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/13 22:44:37 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static char	ft_get_num_length(long nbr)
 {
@@ -56,3 +56,12 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
+
+// int main(void)
+// {
+// 	int		n;
+
+// 	n = -2147483648;
+// 	printf("%s\n", ft_itoa(n));
+// 	return (0);
+// }
