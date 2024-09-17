@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:57:42 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/22 18:07:27 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/17 23:47:12 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -22,3 +22,9 @@ void	ft_putstr_fd(char *s, int fd)
 		s++;
 	}
 }
+
+// int main(void)
+// {
+// 	ft_putstr_fd("Hello, World!", 1);
+// 	return (0);
+// }
