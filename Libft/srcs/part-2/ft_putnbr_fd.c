@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:50:24 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/22 18:07:25 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/17 23:37:34 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
+
+// void	ft_putchar_fd(char c, int fd)
+// {
+// 	write(fd, &c, 1);
+// }
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -33,3 +38,16 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
+
+// int main(void)
+// {
+// 	ft_putnbr_fd(42, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(-42, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(0, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(-2147483648, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	return (0);
+// }
