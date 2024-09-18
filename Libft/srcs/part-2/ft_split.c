@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 15:20:11 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/22 18:17:26 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/18 23:10:48 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static size_t	ft_count_delim(const char *str, char delim)
 {
@@ -109,3 +109,18 @@ char	**ft_split(char const *s, char c)
 	}
 	return (split_result);
 }
+
+// int main(void)
+// {
+// 	char	**split;
+// 	int		i;
+
+// 	split = ft_split("Hello, World!", ' ');
+// 	i = 0;
+// 	while (split[i])
+// 	{
+// 		printf("%s\n", split[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
