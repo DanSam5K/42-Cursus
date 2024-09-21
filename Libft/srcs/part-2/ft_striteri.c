@@ -3,25 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:30:26 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/17 11:47:39 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/21 16:58:56 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int	i;
+	unsigned int	index;
 
-	if (s == NULL || f == NULL)
+	if (!s || !f)
 		return ;
-	i = 0;
-	while (s[i] != '\0')
+	index = 0;
+	while (s[index])
 	{
-		f(i, &s[i]);
-		i++;
+		f(index, &s[index]);
+		index++;
 	}
 }
+
+// void ft_print_striteri(unsigned int index, char *c)
+// {
+// 	printf("index: %d, char: %c\n", index, *c);
+// }
+
+// int main(void)
+// {
+// 	char str[] = "Hello, World!";
+// 	ft_striteri(str, ft_print_striteri);
+// 	return (0);
+// }
