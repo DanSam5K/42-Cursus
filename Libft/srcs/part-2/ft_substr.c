@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 12:33:01 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/09/24 11:30:02 by dansam           ###   ########.fr       */
+/*   Updated: 2024/09/24 11:30:49 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ static char	*allocate_and_copy(const char *s, size_t start, size_t max_len)
 	return (new_str);
 }
 
-size_t	ft_strlen(char const *str)
-{
-	size_t	i;
+// size_t	ft_strlen(char const *str)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (*(str + i))
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (*(str + i))
+// 		i++;
+// 	return (i);
+// }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
