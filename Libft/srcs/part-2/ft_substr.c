@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 12:33:01 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/21 11:55:33 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/09/24 11:30:02 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static char	*allocate_and_copy(const char *s, size_t start, size_t max_len)
 {
@@ -30,6 +30,16 @@ static char	*allocate_and_copy(const char *s, size_t start, size_t max_len)
 	return (new_str);
 }
 
+size_t	ft_strlen(char const *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (*(str + i))
+		i++;
+	return (i);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
@@ -47,12 +57,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (allocate_and_copy(s, start, max_len));
 }
 
-// static size_t	ft_str_len(char const *str)
+// int main(void)
 // {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (*(str + i))
-// 		i++;
-// 	return (i);
+// 	char *s = "Hello, World!";
+// 	char *s1 = ft_substr(s, 0, 5);
+// 	char *s2 = ft_substr(s, 7, 5);
+// 	char *s3 = ft_substr(s, 7, 0);
+// 	printf("%s\n", s1);
+// 	printf("%s\n", s2);
+// 	printf("%s\n", s3);
+// 	return (0);
 // }
