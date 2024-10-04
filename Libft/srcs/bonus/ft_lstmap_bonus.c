@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 20:31:56 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/10/03 22:42:55 by dansam           ###   ########.fr       */
+/*   Updated: 2024/10/04 20:37:30 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	while (temp->next)
 // 		temp = temp->next;
 // 	temp->next = new;
+// }
+
+// int main(void)
+// {
+// 	t_list *head = ft_lstnew(ft_strdup("Hello"));
+// 	ft_lstadd_back(&head, ft_lstnew(ft_strdup("World")));
+// 	ft_lstadd_back(&head, ft_lstnew(ft_strdup("42")));
+// 	t_list *new_head = ft_lstmap(head, &ft_strdup, &free);
+// 	ft_lstclear(&head, &free);
+// 	ft_lstclear(&new_head, &free);
+// 	return (0);
 // }
