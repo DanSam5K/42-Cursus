@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:49:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/06/19 12:22:39 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/10/17 21:36:31 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
@@ -23,3 +23,17 @@ t_list	*ft_lstnew(void *content)
 	head->next = NULL;
 	return (head);
 }
+
+// for testing purposes only
+// implementation of ft_strlen
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
+// implementation of ft_strdup
