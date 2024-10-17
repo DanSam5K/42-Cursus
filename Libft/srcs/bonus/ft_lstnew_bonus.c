@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:49:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/10/17 21:36:31 by dansam           ###   ########.fr       */
+/*   Updated: 2024/10/17 21:39:07 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,20 @@ size_t	ft_strlen(const char *s)
 }
 
 // implementation of ft_strdup
+char	*ft_strdup(const char *src)
+{
+	char	*dest;
+	size_t	i;
+
+	dest = (char *)malloc(ft_strlen(src) + 1);
+	if (!dest)
+		return (0);
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
