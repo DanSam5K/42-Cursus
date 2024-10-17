@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:49:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/10/17 21:41:03 by dansam           ###   ########.fr       */
+/*   Updated: 2024/10/17 21:41:45 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
+}
+
+// t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
