@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:49:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/10/17 21:41:45 by dansam           ###   ########.fr       */
+/*   Updated: 2024/10/17 21:43:52 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,29 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
+}
+
+// void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
+}
+
+// void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*temp;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
 }
