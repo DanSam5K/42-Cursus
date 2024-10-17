@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:49:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/10/17 21:39:07 by dansam           ###   ########.fr       */
+/*   Updated: 2024/10/17 21:39:54 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ char	*ft_strdup(const char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+
+// t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*head;
+
+	head = malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }
