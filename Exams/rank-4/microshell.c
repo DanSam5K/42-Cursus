@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:47:48 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/06 17:06:57 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/12/06 17:07:43 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,3 +75,22 @@ int	exec(char **argv, int i, char **envp)
 	return (WIFEXITED(status) && WEXITSTATUS(status));
 }
 
+int	main(int argc, char **argv, char **envp)
+{
+	int	i;
+	int	status;
+
+	(void)argc;
+	i = 1;
+	status = 0;
+	while (argv[i])
+	{
+		argv += i + 1;
+		i = 0;
+		while (argv[i] && strcmp(argv[i], "|") && strcmp(argv[i], ";"))
+			i++;
+		if (i)
+			status = exec(argv, i, envp);
+	}
+	return (status);
+}
