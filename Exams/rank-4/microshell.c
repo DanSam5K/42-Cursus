@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:47:48 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/06 17:02:57 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/12/06 17:03:49 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,15 @@ int	cd(char **argv, int i)
 		return (err("error: cd: cannot change directory to "),
 			err(argv[1]), err("\n"), 1);
 	return (0);
+}
+
+void	set_pipe(int has_pipe, int *fd, int end)
+{
+	if (has_pipe && (dup2(fd[end], end) == -1
+			|| close(fd[0]) == -1 || close(fd[1]) == -1))
+	{
+		err("error: cannot duplicate file descriptor\n");
+		exit(1);
+	}
 }
 
