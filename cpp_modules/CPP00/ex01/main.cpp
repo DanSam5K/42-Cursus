@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:49:47 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/09 18:44:22 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/12/10 10:37:14 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int main() {
         } else if (input == "SEARCH") {
             std::system("clear");
             Book.ListPhoneBook();
-            std::cout << "\nPlease input the id(id-1) of the contact you would like to see: ";
+            std::cout << "\nPlease input the id of the contact you would like to see: ";
             std::string input;
             std::cin >> input;
             const char *input2 = input.c_str();
