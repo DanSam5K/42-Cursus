@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:06:09 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/10 14:14:47 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/12/10 15:04:38 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ public:
 
     void                makeDeposit( int deposit );
     bool                makeWithdrawal( int withdrawal );
-    int                 checkAmount( void ) const;
     void                displayStatus( void ) const;
 
 private:
