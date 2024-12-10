@@ -6,7 +6,7 @@
 #    By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/12 12:03:53 by dsamuel           #+#    #+#              #
-#    Updated: 2024/06/21 11:55:47 by dsamuel          ###   ########.fr        #
+#    Updated: 2024/12/10 11:03:31 by dsamuel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,19 +33,19 @@ BONUS_O	= $(BONUS_S:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(BONUS_O)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_O)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_O)
 
 %.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(BONUS_O)
+	@$(RM) $(OBJS) $(BONUS_O)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
