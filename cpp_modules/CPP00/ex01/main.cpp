@@ -6,7 +6,7 @@
 /*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:49:47 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/12 20:55:19 by dansam           ###   ########.fr       */
+/*   Updated: 2024/12/12 22:11:45 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,9 @@ int main() {
             std::cin >> input;
             const char *input2 = input.c_str();
             int id = atoi(input2);
-            if ((id == 0 && input2[0] != '0' && input2[1] == 0) || id < 0 || id > 10
-                || !Book.isContactUsed(id) || !std::all_of(input2, input2 + strlen(input2), ::isdigit)) {
-                std::cout << "Invalid id!\n";
-                sleep(1);
-                std::system("clear");
+            if (id < 0 || id >= MaxId || !Book.isContactUsed(id) 
+                || !std::all_of(input2, input2 + strlen(input2), ::isdigit)) {
+                std::cout << "Invalid ID. Please try again.\n";
                 continue;
             }
             std::system("clear");
