@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dansam <dansam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:05:31 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/10 10:36:50 by dsamuel          ###   ########.fr       */
+/*   Updated: 2024/12/12 22:02:56 by dansam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ std::string PhoneBook::GetNickname(int id) {
 void
 PhoneBook::SetContactId(int id, std::string first, std::string last, std::string nick, std::string phone, std::string secret) {
     Contacts[id].SetContact(first, last, nick, phone, secret);
+    id = (id + 1) % MaxId;
 }
 
 void PhoneBook::IdPrintContact(int id) {
@@ -40,7 +41,7 @@ int PhoneBook::isContactUsed(int id) {
 void TruncateAndReplace(std::string &str) {
     if (str.length() > MaxLength) {
         str.resize(MaxLength - 1);
-        std::cout << str << ".";
+        str += ".";
     }
 }
 
@@ -55,7 +56,9 @@ void PhoneBook::ListPhoneBook() {
                 << "|" << std::setw(10) << "Nickname"
                 << "|" << std::endl;
     std::cout << separator;
-     for (int id = 0; Contacts[id].ContactExists() && id < MaxId; id++) {
+     for (int id = 0; id < MaxId; id++) {
+        if (!isContactUsed(id))
+            continue;
         std::string firstname = GetFirstName(id);
         TruncateAndReplace(firstname);
         std::string lastname = GetLastName(id);
