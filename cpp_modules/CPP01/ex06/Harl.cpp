@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 21:21:36 by dsamuel           #+#    #+#             */
-/*   Updated: 2024/12/24 22:18:27 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/01/02 18:52:16 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,29 @@ void Harl::complain(std::string level) {
 
     for (int i = 0; i < 4; i++) {
         if (levels[i] == level) {
-            (this->*complaints[i])();
-            return;
+            switch (i) {
+                case 0:
+                    (this->*complaints[0])();
+                    (this->*complaints[1])();
+                    (this->*complaints[2])();
+                    (this->*complaints[3])();
+                    return;
+                case 1:
+                    (this->*complaints[1])();
+                    (this->*complaints[2])();
+                    (this->*complaints[3])();
+                    return;
+                case 2:
+                    (this->*complaints[2])();
+                    (this->*complaints[3])();
+                    return;
+                case 3:
+                    (this->*complaints[3])();
+                    return;
+                default:
+                    (this->*complaints[3])();
+                    break;
+            }
         }
     }
-
-    std::cout << "Unknown complaint level" << std::endl;
 }
