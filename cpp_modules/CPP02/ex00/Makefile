@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dansam <dansam@student.42.fr>              +#+  +:+       +#+         #
+#    By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/17 23:01:12 by dansam            #+#    #+#              #
-#    Updated: 2024/12/17 23:01:15 by dansam           ###   ########.fr        #
+#    Updated: 2025/01/02 21:01:56 by dsamuel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp Fixed.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = a.out
+NAME = fixedPoint
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 RM = rm -f
