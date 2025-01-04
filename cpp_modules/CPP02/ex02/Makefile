@@ -5,38 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/17 23:01:12 by dansam            #+#    #+#              #
-#    Updated: 2025/01/02 21:01:56 by dsamuel          ###   ########.fr        #
+#    Created: 2025/01/03 15:03:43 by dsamuel           #+#    #+#              #
+#    Updated: 2025/01/03 15:03:46 by dsamuel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Fixed.cpp\
-
-OBJS = $(SRCS:.cpp=.o)
-NAME = fixedPoint
+CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-CXX = c++
-RM = rm -f
-
-ifdef DEBUG
-	CXXFLAGS += -g -fsanitize=address
-endif
+SRC = main.cpp Fixed.cpp
+OBJ = $(SRC:.cpp=.o)
+NAME = fixedPoint
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-debug:
-	$(CXX) -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address  -o $(NAME) $(SRCS)
-
-%.o: %.c
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
