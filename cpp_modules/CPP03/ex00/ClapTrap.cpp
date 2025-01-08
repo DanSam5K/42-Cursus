@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 18:50:14 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/01/07 18:50:38 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/01/08 16:29:05 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 
 ClapTrap::~ClapTrap() {
   std::cout << "Destructor called\n";
-  // Destructor implementation
 }
 
 std::string ClapTrap::getName() const { return (this->Name_); }
