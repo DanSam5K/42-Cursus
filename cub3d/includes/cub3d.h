@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 22:47:42 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/02/24 16:35:32 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/02/25 20:35:00 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,15 +310,15 @@ typedef struct s_data
 // void	free_tab(void **tab);
 // int		free_data(t_data *data);
 
-// /* error.c */
-// int		err_msg(char *detail, char *str, int code);
-// int		err_msg_val(int detail, char *str, int code);
+/* error.c */
+int		err_msg(char *detail, char *str, int code);
+int		err_msg_val(int detail, char *str, int code);
 
-// /* debug/debug.c */
-// void	debug_display_data(t_data *data);
-// void	debug_display_minimap(t_minimap *minimap);
-// void	debug_display_player(t_data *data);
-// void	debug_print_char_tab(char **tab);
+/* debug/debug.c */
+void	debug_display_data(t_data *data);
+void	debug_display_minimap(t_minimap *minimap);
+void	debug_display_player(t_data *data);
+void	debug_print_char_tab(char **tab);
 
 
 
