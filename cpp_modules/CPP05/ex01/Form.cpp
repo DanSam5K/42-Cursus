@@ -6,69 +6,99 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:30:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/03/31 12:48:56 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/03 18:32:01 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-// Constructor with calidation
-Form::Form(const std::string name, int gradeToSign, int gradeToExecute)
-    : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+Form::Form(const std::string &name, const unsigned int gradeToSign,
+    const unsigned int gradeToExecute)
+: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
+    std::cout << "[Form] Constructor called." << std::endl;
     if (gradeToSign < 1 || gradeToExecute < 1)
-        throw GradeTooHighException();
+        throw Form::GradeTooHighException();
     if (gradeToSign > 150 || gradeToExecute > 150)
-        throw GradeTooLowException();
+        throw Form::GradeTooLowException();
+    this->_isSigned = false;
 }
 
-// Destructor
-Form::~Form() {}
-
-// Getters
-std::string Form::getName() const
+Form::Form() : _name("Default"), _isSigned(false),
+    _gradeToSign(150), _gradeToExecute(150) 
 {
-    return name;
+    std::cout << "[Form] Default constructor called." << std::endl;
+}
+
+Form::Form(const Form &other)
+    : _name(other._name), _isSigned(), _gradeToSign(other.getGradeToSign()), _gradeToExecute(other.getGradeToExecute())
+{
+    std::cout << "[Form] Copy constructor called." << std::endl;
+    this->_isSigned = other._isSigned;
+}
+
+Form &Form::operator=(const Form &other)
+{
+    std::cout << "[Form] Assignment operator called." << std::endl;
+    if (this != &other)
+    {
+        this->_isSigned = other._isSigned;
+    }
+    return *this;
+}
+
+Form::~Form()
+{
+    std::cout << "[Form] Destructor called." << std::endl;
+}
+
+std::string Form::getName() const 
+{ 
+    return this->_name; 
 }
 
 bool Form::getIsSigned() const
-{
-    return isSigned;
+{ 
+    return this->_isSigned; 
 }
 
-int Form::getGradeToSign() const
-{
-    return gradeToSign;
+unsigned int Form::getGradeToSign() const
+{ 
+    return (this->_gradeToSign); 
 }
 
-int Form::getGradeToExecute() const
-{
-    return gradeToExecute;
+unsigned int Form::getGradeToExecute() const 
+{ 
+    return (this->_gradeToExecute); 
 }
 
-// Bureaucrat attempt to sign the form
-void Form::beSigned(const Bureaucrat &bureaucrat)
+void Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() > gradeToSign)
-        throw GradeTooLowException();
-    isSigned = true;
+    if (this->getIsSigned())
+        bureaucrat.signForm(this, "already signed");
+    if (bureaucrat.getGrade() > this->getGradeToSign())
+    {
+        bureaucrat.signForm(this, "grade too low");
+        throw Form::GradeTooLowException();
+    }
+    this->_isSigned = true;
+    bureaucrat.signForm(this, "signed");
 }
 
-// Exception Messages
-const char* Form::GradeTooHighException::what() const throw()
+const char *Form::GradeTooHighException::what() const throw()
 {
-    return "Form: Grade is too high!";
+    return "[Form Exception] Grade is too High!";
 }
 
-const char* Form::GradeTooLowException::what() const throw()
+const char *Form::GradeTooLowException::what() const throw() 
 {
-    return "Form: Grade is too low!";
+    return "[Form Exception] Grade is too Low!";
 }
 
-// Overload << operator for printing
-std::ostream& operator<<(std::ostream &out, const Form &form)
+std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-    out << "Form Name: " << form.getName() << ", Signed: " << (form.getIsSigned() ? "Yes" : "No")
-        << ", Grade to Sign: " << form.getGradeToSign() << ", Grade to Execute: " << form.getGradeToExecute();
+    out << form.getName() << ", Form grade to sign: " << form.getGradeToSign()
+        << ", Form grade to execute: " << form.getGradeToExecute()
+        << ", Form is signed: " << (form.getIsSigned() ? "yes" : "no");
     return out;
 }

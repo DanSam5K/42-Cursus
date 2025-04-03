@@ -6,39 +6,46 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:08:58 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/03/31 13:57:56 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/03 18:38:22 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int main()
-{
-    try
-    {
-        Bureaucrat b1("Bureaucrat1", 2);
-        Bureaucrat b2("Bureaucrat2", 50);
-
-        Form f1("Form1", 5, 10);
-        Form f2("Form2", 100, 100);
-
-        std::cout << f1 << std::endl;
-        std::cout << f2 << std::endl;
-
-        b1.signForm(f1);
-        b2.signForm(f1);
-
-        b2.signForm(f2);
-
-        std::cout << f1 << std::endl;
-        std::cout << f2 << std::endl;
-        
+int main() {
+    // Test Bureaucrat and Form classes
+    try {
+      Bureaucrat BureaucratA("Bureaucrat A", 124);
+      Form FormA("Formâge A", 124,  123);
+      std::cout << FormA << std::endl;
+      FormA.beSigned(BureaucratA);
+      std::cout << FormA << std::endl;
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
     }
-    catch (std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
+    std::cout << "============" << std::endl;
+  
+    // Test Form signing with correct grade
+    try {
+      Bureaucrat BureaucratA("Bureaucrat A", 124);
+      Form FormB("Formâge B", 150,  123);
+      FormB.beSigned(BureaucratA);
+      std::cout << FormB << std::endl;
+      BureaucratA.signForm(&FormB, "");
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
     }
-
-    return 0;
+    
+    // Incorrect grade
+    try {
+      Bureaucrat BureaucratA("Bureaucrat A", 124);
+      Form FormB("Formâge B", 0,  123);
+      FormB.beSigned(BureaucratA);
+      std::cout << FormB << std::endl;
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
+    }
+    
+    std::cout << "============" << std::endl;
 }
