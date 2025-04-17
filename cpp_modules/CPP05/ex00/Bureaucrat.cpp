@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:22:22 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/03 17:23:29 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 10:56:05 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // Constructor with grade validation
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
-    std::cout << "Bureaucrat default constructor called" << std::endl;
+    std::cout << "Bureaucrat default constructor invoked" << std::endl;
 }
 
 // Copy constructor
 Bureaucrat::Bureaucrat(std::string const &name, int const &grade) : _name(name)
 {
-    std::cout << "Bureaucrat constructor called" << std::endl;
+    std::cout << "Bureaucrat constructor invoked" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     else if (grade > 150)
@@ -31,14 +31,14 @@ Bureaucrat::Bureaucrat(std::string const &name, int const &grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade()
 {
-    std::cout << "Bureaucrat copy constructor called" << std::endl;
+    std::cout << "Bureaucrat copy constructor invoked" << std::endl;
     *this = src;
 }
 
 // Assignment operator
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-    std::cout << "Bureaucrat assignment operator called" << std::endl;
+    std::cout << "Bureaucrat assignment operator invoked" << std::endl;
     if (this != &rhs)
     {
         this->_grade = rhs._grade;
@@ -49,7 +49,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 // Destructor
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat destructor called" << std::endl;
+    std::cout << "Bureaucrat destructor invoked" << std::endl;
 }
 
 // Getters
