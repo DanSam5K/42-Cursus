@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 13:08:58 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/03 18:38:22 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 12:10:40 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main() {
     } catch (std::exception &e) {
       std::cout << e.what() << std::endl;
     }
+    std::cout << "============" << std::endl;
     
     // Incorrect grade
     try {

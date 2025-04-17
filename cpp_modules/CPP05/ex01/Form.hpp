@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:18:42 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/03 18:20:38 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 11:15:56 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Form
 {
     private:
         std::string const _name; // const because it should not be changed
-        bool _isSigned; // true if the form is signed, false otherwise
+        bool _signedOrNot; // true if the form is signed, false otherwise
         const unsigned int _gradeToSign; // grade required to sign the form
         const unsigned int _gradeToExecute; // grade required to execute the form
 
@@ -37,7 +37,7 @@ class Form
 
         //Getters
         std::string getName() const;
-        bool getIsSigned() const;
+        bool getSignedOrNot() const;
         unsigned int getGradeToSign() const;
         unsigned int getGradeToExecute() const;
 

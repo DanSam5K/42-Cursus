@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:09:19 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/03 17:44:50 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 11:11:47 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat
         unsigned int getGrade() const;
 
         // Functions to sign
-        void signForm(const Form *form, const std::string &reason);
+        void signForm(const Form *form, const std::string &signReason);
 
         // Functions  Grade modifications
         void incrementGrade();
@@ -57,6 +57,6 @@ class Bureaucrat
 };
 
 // Overload << operator
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureau_obj);
 
 #endif //EX00_BUREAUCRAT_HPP

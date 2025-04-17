@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 12:51:18 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/03 17:47:37 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 11:11:36 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // Constructor with grade validation
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
-    std::cout << "Bureaucrat default constructor called" << std::endl;
+    std::cout << "[Bureaucrat] default constructor invoked" << std::endl;
 }
 
 // Copy constructor
 Bureaucrat::Bureaucrat(std::string const &name, int const &grade) : _name(name)
 {
-    std::cout << "Bureaucrat constructor called" << std::endl;
+    std::cout << "[Bureaucrat] constructor invoked" << std::endl;
     if (grade < 1)
         throw GradeTooHighException();
     else if (grade > 150)
@@ -31,14 +31,14 @@ Bureaucrat::Bureaucrat(std::string const &name, int const &grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src._name), _grade()
 {
-    std::cout << "Bureaucrat copy constructor called" << std::endl;
+    std::cout << "[Bureaucrat] copy constructor invoked" << std::endl;
     *this = src;
 }
 
 // Assignment operator
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-    std::cout << "Bureaucrat assignment operator called" << std::endl;
+    std::cout << "[Bureaucrat] assignment operator invoked" << std::endl;
     if (this != &rhs)
     {
         this->_grade = rhs._grade;
@@ -49,7 +49,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 // Destructor
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat destructor called" << std::endl;
+    std::cout << "[Bureaucrat] destructor invoked" << std::endl;
 }
 
 // Getters
@@ -79,12 +79,12 @@ void Bureaucrat::incrementGrade()
 }
 
 // Functions to sign
-void Bureaucrat::signForm(const Form *form, const std::string &reason)
+void Bureaucrat::signForm(const Form *form, const std::string &signReason)
 {
-    if (form->getIsSigned())
-        std::cout << this->_name << " signed " << form->getName() << std::endl;
+    if (signReason.empty())
+        std::cout << this->getName() << " signed " << form->getName() << std::endl;
     else
-        std::cout << this->_name << " couldn't sign " << form->getName() << " because " << reason << std::endl;
+        std::cout << this->getName() << " couldn't sign " << form->getName() << " because " << signReason << std::endl;
 }
 
 // Exception messages
@@ -99,8 +99,8 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 }
 
 // Overload << operator
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureau_obj)
 {
-    out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+    out << bureau_obj.getName() << ", bureaucrat grade " << bureau_obj.getGrade() << ".";
     return out;
 }
