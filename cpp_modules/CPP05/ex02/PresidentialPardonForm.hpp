@@ -6,10 +6,9 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 16:27:47 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/16 17:46:27 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 18:59:57 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
@@ -33,4 +32,4 @@ class PresidentialPardonForm : public AForm
     void executer() const;
 };
 
-#endif // PRESIDENTIALPARDONFORM_HPP
+#endif

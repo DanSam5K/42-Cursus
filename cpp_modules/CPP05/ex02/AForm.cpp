@@ -6,7 +6,7 @@
 /*   By: dsamuel <dsamuel@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:50:25 by dsamuel           #+#    #+#             */
-/*   Updated: 2025/04/16 17:40:33 by dsamuel          ###   ########.fr       */
+/*   Updated: 2025/04/17 18:57:19 by dsamuel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ AForm::AForm()
 }
 
 AForm::AForm(const AForm &other)
-    : _formName(other._formName), _signedOrNot(), _gradeToSign(other._gradeToSign),
-      _gradeToExecute(other._gradeToExecute)
+    : _formName(other._formName), _signedOrNot(), _gradeToSign(other.getGradeToSign()),
+      _gradeToExecute(other.getGradeToExecute())
 {
   std::cout << "[AForm] Copy constructor invoked" << std::endl;
   this->_signedOrNot = other._signedOrNot;
 }
-
 
 AForm &AForm::operator=(const AForm &other)
 {
@@ -58,12 +57,12 @@ std::string AForm::getFormName() const
   return  this->_formName;
 }
 
-bool AForm::getIsSignedOrNot() const
+bool AForm::getSignedOrNot() const
 {
   return this->_signedOrNot;
 }
 
-void AForm::setIsSignedOrNot(bool signedOrNot)
+void AForm::setSignedOrNot(bool signedOrNot)
 {
   this->_signedOrNot = signedOrNot;
 }
@@ -80,7 +79,7 @@ unsigned int AForm::getGradeToExecute() const
 
 void AForm::beSigned(Bureaucrat &bureauSigner)
 {
-  if (this->getIsSignedOrNot())
+  if (this->getSignedOrNot())
     bureauSigner.signForm(this, "already signed");
   if (bureauSigner.getGrade() > this->getGradeToSign())
   {
@@ -91,11 +90,10 @@ void AForm::beSigned(Bureaucrat &bureauSigner)
   bureauSigner.signForm(this, "signed");
 }
 
-void AForm::execute(Bureaucrat const &executor) const
-{
-  if (!this->getIsSignedOrNot())
+void AForm::execute(Bureaucrat const &executor) const {
+  if (!this->getGradeToSign())
     throw AForm::FormIsNotSignedException();
-  if (executor.getGrade() > this->getGradeToExecute())
+  if (this->getGradeToSign() < executor.getGrade())
     throw AForm::GradeTooLowException();
   this->executer();
 }
@@ -116,7 +114,7 @@ const char *AForm::FormIsNotSignedException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &out, const AForm &form) {
   out << "[AForm] Form name: " << form.getFormName() << ", is signed: "
-      << (form.getIsSignedOrNot() ? "true" : "false")
+      << (form.getSignedOrNot() ? "true" : "false")
       << ", grade to sign: " << form.getGradeToSign()
       << ", grade to execute: " << form.getGradeToExecute();
   return out;
