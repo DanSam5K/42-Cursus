@@ -58,6 +58,7 @@ int	exec(char **argv, int i, char **envp)
 		err("error: cannot create pipe\n");
 		exit(1);
 	}
+	pid = fork();
 	if (!pid)
 	{
 		argv[i] = 0;
@@ -77,12 +78,10 @@ int	exec(char **argv, int i, char **envp)
 
 int	main(int argc, char **argv, char **envp)
 {
-	int	i;
-	int	status;
+	int	i = 0;
+	int	status = 0;
 
 	(void)argc;
-	i = 1;
-	status = 0;
 	while (argv[i])
 	{
 		argv += i + 1;
